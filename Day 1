@@ -1,0 +1,70 @@
+// Program 1
+//Converting celcius into fahrenheit
+#include <iostream>
+using namespace std;
+int main(){
+    double celcius , fahrenheit; 
+    cin>>celcius;
+    fahrenheit=(celcius * 9.0/5.0) + 32;
+    cout<< fahrenheit<<endl;
+    return 0;
+}
+
+
+//Program 2
+//Llocal and global variables
+#include <iostream>
+using namespace std;
+int globalvariable=100;
+int main(){
+    int localvariable;
+    cin>> localvariable;
+    int result =(globalvariable / localvariable);
+    cout<<result<<endl;
+    return 0;
+}
+
+
+//Program 3
+//Equilateral Triangle
+#include <iostream>
+using namespace std;
+int main(){
+    int s1,s2,s3;
+    cin>>s1>>s2>>s3;
+    bool isEqui=(s1>0)&&(s1==s2)&&(s2==s3);
+    cout<<isEqui<<endl;
+    return 0;
+}
+
+
+//Program 4
+//swapping values
+#include<iostream>
+using namespace std;
+int main (){
+    int a , b; 
+    cin >> a>> b ; 
+    // logic is to swap variable values 
+    int temp = a; 
+    a=b; 
+    b=temp; 
+    cout<<a<<"\n"<<b<< endl;
+    return 0 ; 
+}
+
+
+//Program 5
+//Login credentials
+#include <iostream>
+using namespace std;
+int main(){
+    int userid= 1234;
+    int userpw= 0000;
+    int inputid, inputpw;
+    cin>>inputid>>inputpw;
+    bool isGranted=(userid== inputid) && (userpw==inputpw);
+    cout<<"Access Granted"<<isGranted<<endl;
+    cout<<"Access Denied"<<!isGranted<<endl;
+    return 0;
+}
