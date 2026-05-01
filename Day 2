@@ -71,4 +71,96 @@ int main(){
 
 
 //Program 5
-//
+//switch case
+#include <iostream>
+using namespace std;
+int main()
+{
+    int day_number;
+    cin>>day_number;
+    switch(day_number){
+        case 1:
+        cout<<"monday";
+        break;
+        case 2:
+        cout<<"tuesday";
+        break;
+        case 3:
+        cout<<"wednesday";
+        break;
+        case 4:
+        cout<<"thursday";
+        break;
+        case 5:
+        cout<<"friday";
+        break;
+        case 6:
+        cout<<"saturday";
+        break;
+        case 7:
+        cout<<"sunday";
+        break;
+        default:
+        cout<<"enter a valid number:";
+    }
+    
+    
+    return 0;
+}
+
+
+//Program 6
+//customer support IVR system
+#include <iostream>
+using namespace std;
+int main()
+{
+ int choice;
+ cin>>choice;
+ switch (choice){
+     case 1:
+     cout<<"Transferring calls to support team";
+     break;
+     case 2:
+     cout<<"Transferring calls to billing accounts and deprtment";
+     break;
+     case 3:
+     cout<<"connecting call to technical team";
+     break;
+     case 4:
+     cout<<"please wait while we are connecting your call to the agent";
+     break;
+     default:
+     cout<<"enter a valid choice:";
+     
+     return 0;
+     }
+}
+
+
+//Program 7 Nested if -else condition
+//smart home lighting
+#include <iostream>
+using namespace std;
+int main(){
+    string dayOrNight;
+    bool motionDetected;
+    
+    cout<<"Is it Day or Night?..";
+    cin>>dayOrNight;
+    cout<<"Is motion detected?.. enter 1 for yes and 0 for no ";
+    cin>>motionDetected;
+    
+    if(dayOrNight=="Night" || dayOrNight=="night" ){
+        if(motionDetected){
+            cout<<"Turn on LED with 100% brightness";
+        }
+        else{
+            cout<<"Turn on LED with 10% brightness";
+        }
+    }
+    else{
+        cout<<"Turn off LED lights";
+    }
+}
+
