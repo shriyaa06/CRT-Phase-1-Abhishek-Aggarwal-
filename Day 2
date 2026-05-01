@@ -1,0 +1,74 @@
+// Program 1
+//If condition voting
+#include <iostream>
+using namespace std;
+int main(){
+    int age;
+    cin>>age;
+    if(age>=18){
+        cout<< "Eligible for vote";
+        }
+        return 0;
+}
+
+
+//Program 2
+//If else condition voting
+#include <iostream>
+using namespace std;
+int main(){
+    int age;
+    cin>>age;
+    if(age>=18){
+        cout<<" Eligible for vote";
+    }else{
+        cout<< "Not eligible for vote";
+    }
+    return 0;
+}
+
+
+//Program 3
+// If else condition for senior citizen voting
+#include <iostream>
+using namespace std;
+int main(){
+    int age;
+    cin>>age;
+    if(age>=18){
+        if(age>=50){
+            cout<<"Senior citizen eligible for vote";
+        }else{
+        cout<< "Eligible for vote";
+        }
+    }else{
+        if(age<0){
+            cout<<"Enter valid age";
+        }else{
+            cout<<"Not eligible for vote";
+        }
+    }
+    return 0;
+}
+
+
+//Program 4
+//using Ternary operator
+#include <iostream>
+using namespace std;
+int main(){
+    int a ,b;
+    int max_number;
+    cout<<"enter 1st number:";
+    cin>>a;
+    cout<<"enter 2nd number:";
+    cin>>b;
+    //logic for ternary operator
+    max_number=(a>b)?a:b;
+    cout<<"greater number:"<<max_number;
+    return 0;
+}
+
+
+//Program 5
+//
