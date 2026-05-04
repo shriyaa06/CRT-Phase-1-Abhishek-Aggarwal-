@@ -54,7 +54,7 @@ int main(){
             cout<<"\n";
         }
 }
-
+ 
 
 //Program 4
 //Printing right angle triangle
@@ -74,4 +74,76 @@ int main(){
 
 
 //Program 5
-//Printing 
+//Printing hollow square
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter rows:";
+    cin>>n;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                cout << " ";
+                if(i==1 || i==n || j==n || j==1){
+                    cout <<"*";
+                } else{
+                cout <<" ";
+            }
+            
+        }
+            cout<<"\n";
+    }
+}
+
+
+//Program 6
+//Printing hollow rectangle
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter rows:";
+    cin>>n;
+    int m;
+    cout<<"Enter columns:";
+    cin>>m;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=m;j++){
+                cout << " ";
+                if(i==1 || i==n || j==m || j==1){
+                    cout <<"*";
+                } else{
+                cout <<" ";
+            }
+            
+        }
+            cout<<"\n";
+    }
+}
+
+
+//Program 7
+//Printing triangle with front spaces
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter rows:";
+    cin>>n;
+        for(int i=1;i<=n;i++){
+            for(int j=n-i;j>=1;j--){
+                cout<<" ";
+            }
+            for(int k=1;k<=i;k++){
+                    cout<<"*";
+            }
+            cout<<"\n";
+    }
+}
+
+
+
+
+
+
+
