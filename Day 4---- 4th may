@@ -1,0 +1,77 @@
+//Program 1
+//Print numbers patters
+12345
+12345
+12345
+12345
+12345
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<j;
+        }
+        cout<<"\n";
+    }
+}
+
+
+//Program 2
+//Print solid square
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<"*"<<" ";
+        }
+        cout<<"\n";
+    }
+}
+
+
+//Program 3
+//Printing solid rectangle
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter length:";
+    cin>>n;
+    int m;
+    cout<<"Enter breadth:";
+    cin>>m;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=m;j++){
+                cout<<"*"<<" ";
+                }
+            cout<<"\n";
+        }
+}
+
+
+//Program 4
+//Printing right angle triangle
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter rows:";
+    cin>>n;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                cout<<"*"<<" ";
+                }
+            cout<<"\n";
+        }
+}
+
+
+//Program 5
+//Printing 
