@@ -1,0 +1,140 @@
+//Program 1
+//Calculating total bill of coffee
+#include <iostream>
+using namespace std;
+int price(int coffee){
+    return coffee*30;
+}
+int main(){
+    int n;
+    cout<<"enter no of coffee:";
+    cin>>n;
+    int p=price(n);
+    cout<<"Bill:"<<p;
+}
+
+
+//Program 2
+//Calculating total bill after 10% discount
+#include <iostream>
+using namespace std;
+int bill(int price){
+    return (price-(price*10/100));
+}
+int main(){
+    int n;
+    cout<<"enter your bill amount:";
+    cin>>n;
+    int p=bill(n);
+    cout<<"Discounted Bill is :"<<p;
+}
+
+
+//Program 3
+//Smart AC remote
+#include <iostream>
+using namespace std;
+void setTemperature(){
+    cout<<"Temperature set to 22°C"<<"\n";
+}
+void setTemperature(double temp){
+    cout<<"Temperature set to "<<temp<<"°C"<<"\n";
+}
+void setTemperature(string mode){
+    if(mode=="ECO"){
+        cout<<"Temperature set to 24°C"<<"\n";
+    }else if(mode=="TURBO"){
+        cout<<"Temperature set to 18°C"<<"\n";
+    }
+}
+int main(){
+    setTemperature();
+    setTemperature(25.5);
+    setTemperature("ECO");
+}
+
+
+//Program 4
+//Pointers(Declaration,initialization,arithmetic operator using pointers)
+#include <iostream>
+using namespace std;
+int main(){
+    int a=10;
+    int *ptr1=&a;
+    
+    int b=20;
+    int *ptr2=&b;
+    
+    int c= *ptr1 + *ptr2;
+    cout<<c;
+}
+
+
+//Program 5
+//Swapping using pointers function
+#include <iostream>
+using namespace std;
+void swap(int *ptr1,int *ptr2){
+    int temp=*ptr1;
+    *ptr1=*ptr2;
+    *ptr2=temp;
+}
+int main(){
+    int a,b;
+    cout<<"a:";
+    cin>>a;
+    cout<<"b:";
+    cin>>b;
+    swap(&a,&b);
+    cout<<"a:"<<a<<"\n"<<"b:"<<b;
+}
+
+
+//Program 6
+//Classes and objects
+#include <iostream>
+using namespace std;
+class Student{
+public: 
+    string name;
+    int age;
+void introduce(){
+    cout<<"Name is: "<< name <<"\n"<< "Age is: "<< age<<"\n";
+}
+};
+int main(){
+    Student s1,s2;
+    s1.name="Shriya";
+    s1.age=19;
+    s2.name="Agarwal";
+    s2.age=20;
+    s1.introduce();
+    s2.introduce();
+}
+
+
+//Program 7
+//Access specifier
+//types -- 7.1 public
+        -- 7.2 private
+        -- 7.3 protected
+
+// 7.1-- Public 
+
+#include <iostream>
+using namespace std;
+class publicPark{
+public: 
+    void enter(){
+        cout<<"Anyone can enter in the park."<<"\n";
+    }
+};
+int main(){
+    publicPark p;
+    p.enter();
+}
+
+
+
+
+
