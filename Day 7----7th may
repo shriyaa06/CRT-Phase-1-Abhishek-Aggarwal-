@@ -1,8 +1,48 @@
-//Program 1(7.2 of day 6)
-//Private
+//Program 1(7.2 of Day 6)
+//Private(Accessing your bank balance)
+
+#include <iostream>
+using namespace std;
+
+class BankAccount{
+private:
+    int balance=5000;
+public:
+void showbalance(){
+        cout<<balance;
+    }
+};
+
+int main(){
+    BankAccount obj1;
+    obj1.showbalance();
+}
 
 
+//Program 2(7.3 of Day 6)
+//Protected(Creating a family vault locker)
 
+#include <iostream>
+using namespace std;
+
+class Parent{
+protected:
+      int secretCode=1234;
+};
+
+class Child : public Parent{
+    public:
+    void accessLocker(){
+        cout<<"Code is:"<<secretCode;
+    }
+    
+};
+
+int main(){
+    Child obj1;
+    obj1.accessLocker();
+    
+}
 
 
 //Program 3
@@ -29,4 +69,17 @@ int main(){
 
 
 //Program 4
-//
+//Constructor
+//4.1(Parameterized constructor)
+
+
+
+
+
+
+
+
+
+
+
+
