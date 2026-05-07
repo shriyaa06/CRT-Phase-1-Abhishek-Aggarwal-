@@ -1,0 +1,32 @@
+//Program 1(7.2 of day 6)
+//Private
+
+
+
+
+
+//Program 3
+//Call by value and reference
+
+#include <iostream>
+using namespace std;
+
+void updateByValue(int a){
+    a=500;
+}
+
+void updateByReference(int &a){
+    a=500;
+}
+
+int main(){
+    int original=100;
+    updateByValue(original);
+    cout<< original<<"\n";
+    updateByReference(original);
+    cout<< original;
+}
+
+
+//Program 4
+//
