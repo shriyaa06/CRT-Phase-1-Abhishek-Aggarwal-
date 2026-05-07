@@ -71,13 +71,102 @@ int main(){
 //Program 4
 //Constructor
 //4.1(Parameterized constructor)
+//passing name and age
+
+#include <iostream>
+using namespace std;
+
+class Student{
+public: 
+    string name;
+    int age;
+
+    //CONSTRUCTOR MAKING
+    Student(string studentName, int studentAge){
+        name=studentName;
+        age=studentAge;
+    }
+    
+void introduce(){
+    cout<<"Name is: "<< name <<"\n"<< "Age is: "<< age<<"\n";
+    }
+};
+
+int main(){
+    Student s1("Shriya",19);
+    s1.introduce();
+}
 
 
+//Program 5
+//4.2 (Default constructor)
+//Giving Wi-Fi credentials
 
 
+#include <iostream>
+using namespace std;
+
+class wifiConnection{
+public:
+      string networkName;
+      int password;
+
+     //CONSTRUCTOR MAKING
+      wifiConnection(){
+          networkName = "ACT Fiber Network";
+          password= 1234;
+      }
+void showDetails(){
+    cout<<"Wifi Name: "<< networkName<<"\n";
+    cout<< "Password: "<<password;
+   }
+};
+int main(){
+    wifiConnection obj1;
+    obj1. showDetails();
+    
+}
 
 
+//Program 6
+//Constructor Overloading
 
+#include <iostream>
+using namespace std;
+
+class rectangle{
+public:
+    int length;
+    int breadth;
+
+    //CONSTRUCTOR MAKING---(DEFAULT - no value)
+    rectangle(){
+        length=10;
+        breadth=20;
+    } 
+    //CONSTRUCTOR MAKING---(PARAMETERIZED with 1 value)
+    rectangle(int l){
+        length=l;
+        breadth=20;
+    }
+    //CONSTRUCTOR MAKING---(PARAMETERIZED with 2 value)
+    rectangle(int l, int b){
+        length=l;
+        breadth=b;
+    }
+void area(){
+    cout<<"Area:"<< length*breadth<<"\n";
+    }
+};
+
+int main(){
+    rectangle r1;
+    r1.area();
+    rectangle r2(50);
+    r2.area();
+    rectangle r3(5,2);
+    r3.area();
+}
 
 
 
