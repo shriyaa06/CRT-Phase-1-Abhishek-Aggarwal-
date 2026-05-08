@@ -1,0 +1,180 @@
+//Program 1
+//Types of Inheritance
+//1.1 -- Single inheritance
+
+#include <iostream>
+using namespace std;
+
+class vehicle{
+public:
+    void start(){
+        cout<<"Vehicle starts."<<"\n";
+    }
+};
+class Car: public vehicle{
+public:
+    void drive(){
+        cout<<"Car is Driving."<<"\n";
+    }
+};
+int main(){
+    Car obj1;
+    obj1.start();
+    obj1.drive();
+}
+
+
+//Program 2
+//1.2-- Multilevel Inheritance
+
+#include <iostream>
+using namespace std;
+
+class vehicle{
+public:
+    void start(){
+        cout<<"Vehicle starts."<<"\n";
+    }
+};
+class Car: public vehicle{
+public:
+    void drive(){
+        cout<<"Car is Driving."<<"\n";
+    }
+};
+class Speedometer:public Car {
+public:
+        void speed(){
+        cout<<"Car is running at 70 km/hr."<<"\n";
+    }
+};
+int main(){
+    Speedometer obj1;
+    obj1.start();
+    obj1.drive();
+    obj1.speed();
+}
+
+
+//Program 3
+//1.3 Hierarchical Inheritance
+
+#include <iostream>
+using namespace std;
+
+class vehicle{
+public:
+    void start(){
+        cout<<"Vehicle starts."<<"\n";
+    }
+};
+class Car: public vehicle{
+public:
+    void drive(){
+        cout<<"Car is Driving."<<"\n";
+        cout<<"\n";
+    }
+};
+class Bike: public vehicle{
+public:
+    void drive(){
+        cout<<"Bike is Driving."<<"\n";
+    }
+};
+int main(){
+    Car obj1;
+    obj1.start();
+    obj1.drive();
+    
+    Bike obj2;
+    obj2.start();
+    obj2.drive();
+}
+
+
+//Program 4
+//1.4 Multiple Inheritance
+
+#include <iostream>
+using namespace std;
+
+class Parent1{
+public:
+   void paiseDoMummy(){
+       cout<<"Mummy paise do bahr jaana h.."<<"\n";
+   }
+};
+class Parent2{
+public:
+    void paiseDoPapa(){
+       cout<<"Papa paise do bahr jaana h.."<<"\n";
+    }
+};
+class Child: public Parent1,public Parent2{
+    //NO LOGIC
+};
+int main(){
+  Child obj1;
+  obj1.paiseDoPapa();
+  obj1.paiseDoMummy();
+}
+
+
+//Program 5
+//1.5 Hybrid Inheritance--Diamond Problem--VIRTUAL BASE CLASS
+
+#include <iostream>
+using namespace std;
+
+class A{
+public:
+    void show(){
+        cout<<"HI THERE..."<<"\n";
+    }
+};
+class B: virtual public A{
+    //no logic
+};
+class C:virtual public A{
+    //no logic
+};
+class D:public B,public C{
+    //no logic
+};
+
+int main(){
+    D obj1;
+    obj1.show();
+}
+
+
+//Program 6
+//Getter and setter in ENCAPSULATION
+
+#include <iostream>
+using namespace std;
+
+class BankAccount{
+private:
+    int bankBalance;
+public:    
+void setBalance(int amount){
+    if (amount>0){
+        bankBalance=amount;
+    }else{
+        cout<<"enter valid amount:"<<"\n";
+    }
+  }
+
+  int getBalance(){
+      cout<<"Bank Balance is : ";
+      return bankBalance;
+  }
+};
+int main(){
+  BankAccount obj1;
+  obj1.setBalance(10000);
+  cout<<obj1.getBalance();
+}
+
+
