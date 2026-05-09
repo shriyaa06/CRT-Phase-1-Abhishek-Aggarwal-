@@ -1,0 +1,43 @@
+//Program 1
+//Function overriding (kitchen appliances)
+
+#include <iostream>
+using namespace std;
+
+class appliance{
+public:
+    virtual void turnOn(){   //VIRTUAL FUNCTION
+        cout<<"Appliance is getting turn on"<<"\n";
+    }
+    virtual void work()=0;          //PURE VIRTUAL FUNCTION
+};
+
+class fan:public appliance{
+public:
+    void turnOn() override{
+        cout<<"Fan blades are moving slowly"<<"\n";
+    }
+    void work() override{
+        cout<<"Once fan starts at full speed it gives cool air"<<"\n";
+    }
+};
+
+class toaster:public appliance{
+public:
+    void work() override{
+        cout<<"Toaster is heating up the breads"<<"\n";
+    }
+};
+
+int main(){
+    fan myFan;
+    appliance* kitchenApp;   //CREATING POINTER FOR CLASS
+    kitchenApp=&myFan;       //STORING ADDRESS OF MY FAN OBJECT
+    kitchenApp->turnOn();    //CALLING THE FUNCTION
+    kitchenApp->work();
+    
+    toaster myToast;
+    kitchenApp =&myToast;
+    kitchenApp->turnOn();
+    kitchenApp->work();
+}
