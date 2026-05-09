@@ -41,3 +41,78 @@ int main(){
     kitchenApp->turnOn();
     kitchenApp->work();
 }
+
+
+//Problem 2
+//Define an array and initialization and traversal
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int arr[5];
+    cout<<"Enter 5 numbers: ";
+    for(int i=0;i<5;i++){
+        cin>>arr[i];
+    }
+    cout<<"Array elements are: ";
+    for(int j=0;j<5;j++){
+        cout<<arr[j]<<" ";
+    }
+}
+
+
+//Program 3
+//Adding the data is an array
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int arr[5];
+    int sum=0;
+    cout<<"Enter 5 numbers: ";
+    for(int i=0;i<5;i++){
+        cin>>arr[i];
+    }
+    cout<<"Array elements are: ";
+    for(int j=0;j<5;j++){
+        cout<<arr[j]<<" ";
+        sum+=arr[j];
+    }cout<<"\n"<<"Sum is: "<<sum;
+}
+
+
+//Program 3
+//To seach an element's in a given array and returning it's index (LINEAR SEARCH)
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int arr[5]={10,20,30,40,50};
+    int n;
+    cout<<"Enter element to search";
+    cin>>n;
+    for(int i=0;i<5;i++){
+        if(arr[i]==n){
+            cout<<"Element present at index:"<<i;
+            return 0;
+        }
+    }cout<<"Element not found";
+}
+
+
+//Program 4
+//To return element's memory address
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int arr[5]={10,20,30,40,50};
+    for(int i=0;i<5;i++){
+            cout<<"Element address is:"<<&arr[i]<<"\n";
+        }
+}
+
