@@ -1,0 +1,99 @@
+//Program 1
+//Printing 1-5 using recursion
+
+#include <iostream>
+using namespace std;
+void printNumber(int n){
+    //base condition
+    if(n>5){
+        return;
+    }
+    
+    //logic
+    cout<<n<<" ";
+    printNumber(n+1);
+}
+
+int main(){
+    printNumber(1);
+}
+
+
+//Program 2
+//Factorial using iteration and recursion
+
+//ITERATION 
+
+#include <iostream>
+using namespace std;
+
+int main(){
+int n;
+cout<<"enter num:";
+cin>>n;
+int fact=1;
+for(int i=1; i<=n; i++){
+    fact=fact*i;
+}
+cout<<"Factorial of "<<n<<" is: "<<fact;
+}
+
+//RECURSION
+
+#include <iostream>
+using namespace std;
+
+int fact(int n){
+    if(n==1 || n==0){
+        return 1;
+    }
+    else{
+        return (n*fact(n-1));
+    }
+}
+int main(){
+    int n ;
+    cout<<"enter number: ";
+    cin>>n;
+    cout<<"Factorial of "<<n<<" is: ";
+    cout<< fact(n);
+    return 0;
+
+
+//Program 3
+//Fibonacci series using recursion
+
+#include <iostream>
+using namespace std;
+
+int fibo(int n){
+    //base condition
+    if(n==1){
+        return 1;
+    }
+    if(n==0){
+        return 0;
+    }
+    //logic
+    return fibo(n-1)+fibo(n-2);
+}
+int main(){
+    cout<<fibo(4);
+}
+
+
+//Program 4
+//Climbing stairs(leetcode 70)
+
+class Solution {
+public:
+    int climbStairs(int n) {
+        if(n==1||n==0){
+        return 1;
+    }
+    //logic
+    return climbStairs(n-1)+climbStairs(n-2);
+}
+    
+};
+
