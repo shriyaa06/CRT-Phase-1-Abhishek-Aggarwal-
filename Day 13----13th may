@@ -1,0 +1,49 @@
+//Program 1
+//Binary string 0/1 in no of spaces(with condition as 1 cant coccur consecutively)(RECURSION)
+
+#include <iostream>
+using namespace std;
+
+int fibo(int n){
+    //base condition
+    if(n==0){
+        return 1;
+    }
+    if(n==1){
+        return 2;
+    }
+    //logic
+    return fibo(n-1)+fibo(n-2);
+}
+int main(){
+    int n;
+    cout<<"Enter no. of spaces: ";
+    cin>>n;
+    cout<<fibo(n);
+}
+
+
+//Program 2
+//Arranging tiles into (4*n) grid where each tile consists 4 blocks(RECURSION)
+
+#include <iostream>
+using namespace std;
+
+int fibo(int n){
+    //base condition
+    if(n<4){
+        return 1;
+    }
+    //logic
+    return fibo(n-4)+fibo(n-1);
+}
+int main(){
+    int n;
+    cout<<"Enter no. of columns: ";
+    cin>>n;
+    cout<<fibo(n);
+}
+
+
+//Program 3
+//
