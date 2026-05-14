@@ -1,3 +1,315 @@
 //Program 1
-//Inserting the data at the head in a linked list
+//Inserting the data at the head(start) in a linked list
+
+#include <iostream>
+using namespace std;
+
+class Node{
+public:
+  int data;
+  Node * next;
+  
+  Node(int new_data){
+     this->data=new_data;
+     this->next= nullptr;
+  }
+};
+
+Node* head=nullptr;
+
+void insertAtHead(int data){                               //FUNCTION
+    Node *newNode=new Node(data);
+    newNode->next=head;
+    head=newNode;
+}
+void display(){
+    Node * temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
+
+int main(){
+    head=new Node(10);
+    head->next=new Node(20);
+    head->next->next=new Node(30);
+    head->next->next->next=new Node(40);
+    insertAtHead(5);
+    display();
+    return 0;
+}
+
+
+//Program 2
+//Inserting the data at the tail(end) in a linked list
+
+#include <iostream>
+using namespace std;
+
+class Node{
+public:
+  int data;
+  Node * next;
+  
+  Node(int new_data){
+     this->data=new_data;
+     this->next= nullptr;
+  }
+};
+
+Node* head=nullptr;
+
+void insertAtEnd(int data){                                 //FUNCTION
+    Node *newNode=new Node(data);
+    Node*temp=head;
+    while(temp->next!=nullptr){
+        temp=temp->next;
+    }
+    temp->next=newNode;
+}
+    
+void display(){
+    Node * temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<"NULL";
+}
+
+int main(){
+    head=new Node(10);
+    head->next=new Node(20);
+    head->next->next=new Node(30);
+    head->next->next->next=new Node(40);
+    insertAtEnd(50);
+    display();
+    return 0;
+}
+
+
+//Program 3
+//Inserting the data at the specific position in a linked list
+
+
+#include <iostream>
+using namespace std;
+
+class Node{
+public:
+  int data;
+  Node * next;
+  
+  Node(int new_data){
+     this->data=new_data;
+     this->next= nullptr;
+  }
+};
+
+Node* head=nullptr;
+
+void insertAtPosition(int data,int position){                     //FUNCTION
+    Node* newNode=new Node(data);
+    Node*temp=head;
+    for(int i=1;i<position-1;i++){
+        temp=temp->next;
+    }
+    newNode->next=temp->next;
+    temp->next=newNode;
+}
+    
+void display(){
+    Node * temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<"NULL";
+}
+
+int main(){
+    head=new Node(10);
+    head->next=new Node(20);
+    head->next->next=new Node(30);
+    head->next->next->next=new Node(40);
+    insertAtPosition(25,3);
+    display();
+    return 0;
+}
+
+
+//Program 4
+//Deleting a value from head in a linked list
+
+#include <iostream>
+using namespace std;
+
+class Node{
+public:
+  int data;
+  Node * next;
+  
+  Node(int new_data){
+     this->data=new_data;
+     this->next= nullptr;
+  }
+};
+Node* head=nullptr;
+
+void deleteAtHead(){                                  //FUNCTION
+    head=head->next;
+}
+void display(){
+    Node * temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<"NULL";
+}
+
+
+int main(){
+    head=new Node(10);
+    head->next=new Node(20);
+    head->next->next=new Node(30);
+    head->next->next->next=new Node(40);
+    deleteAtHead();
+    display();
+    return 0;
+}
+
+
+//Program 5
+//Deleting a value from last position in a linked list
+
+#include <iostream>
+using namespace std;
+
+class Node{
+public:
+  int data;
+  Node * next;
+  
+  Node(int new_data){
+     this->data=new_data;
+     this->next= nullptr;
+  }
+};
+Node* head=nullptr;
+
+void deleteAtEnd(){                                  //FUNCTION
+    Node * temp=head;
+    while(temp->next->next!=nullptr){
+        temp=temp->next;
+    }
+    temp->next=nullptr;
+}
+
+void display(){
+    Node * temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<"NULL";
+}
+
+
+int main(){
+    head=new Node(10);
+    head->next=new Node(20);
+    head->next->next=new Node(30);
+    head->next->next->next=new Node(40);
+    deleteAtEnd();
+    display();
+    return 0;
+}
+
+
+//Program 6
+//Deleting a value from last position in a linked list
+
+#include <iostream>
+using namespace std;
+
+class Node{
+public:
+  int data;
+  Node * next;
+  
+  Node(int new_data){
+     this->data=new_data;
+     this->next= nullptr;
+  }
+};
+Node* head=nullptr;
+
+void deleteAtPosition(int position){                      //FUNCTION
+    Node * temp=head;
+    for(int i=1;i<position-1;i++){
+        temp=temp->next;
+    }temp->next=temp->next->next;
+}
+
+void display(){
+    Node * temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<"NULL";
+}
+
+
+int main(){
+    head=new Node(10);
+    head->next=new Node(20);
+    head->next->next=new Node(30);
+    head->next->next->next=new Node(40);
+    deleteAtPosition(3);
+    display();
+    return 0;
+}
+
+
+//Program 7
+//Reversed Linked List(Leetcode 206)
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev=nullptr;
+        ListNode* current=head;
+        while(current!=nullptr){
+            ListNode* next=current->next;
+            current->next=prev;
+            prev=current;
+            current=next;
+        } 
+        return prev;
+        
+    }
+};
+
+
+//Program 8
+//Middle of the Linked List(Leetcode 876)
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode* slow=head;
+        ListNode* fast=head;
+
+        while(fast!=nullptr && fast->next!=nullptr){
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        return slow;
+    }
+};
+
+
 
