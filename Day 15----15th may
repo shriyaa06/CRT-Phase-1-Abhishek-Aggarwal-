@@ -64,3 +64,58 @@ public:
         }
     }    
 };
+
+
+
+//Program 3
+//Valid Parantheses (leetcode 20)
+
+class Solution {
+public:
+    bool isValid(string s) {
+        stack <char> st;
+
+        for(char c:s){
+            if(c=='(')
+               st.push(')');
+            else if(c=='[')
+                st.push(']');
+            else if(c=='{')
+                st.push('}');
+            else{
+                if(st.empty() || st.top() !=c){
+                    return false;
+                }st.pop();
+            }
+        }
+        return st.empty();
+    }
+};
+
+
+//Program 4
+//Next Larger Element (GEEKS FOR GEEKS question)
+
+class Solution{
+    public:
+    vector<int> nextLargerElement(vector<int>&arr){
+        int n=arr.size();
+        stack<int> st;
+        vector<int> nge(n);
+        
+        for(int i=n-1;i>=0;i--){
+            while(!st.empty() && st.top()<=arr[i]){
+                st.pop();
+            }
+            if(st.empty()){
+                nge[i]=-1;
+            }else{
+                nge[i]=st.top();
+            }
+            st.push(arr[i]);
+        }
+        return nge;
+    }
+};
+
+
