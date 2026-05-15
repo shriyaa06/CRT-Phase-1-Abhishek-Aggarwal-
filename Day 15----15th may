@@ -1,0 +1,66 @@
+//Program 1
+//Reversing an array using stack (push,pop,top function)
+
+#include <iostream>
+#include <stack>
+using namespace std;
+int main(){
+    int arr[]={10,20,30,40,50};
+    int n=5;
+    
+    stack<int> st;
+    //JAVA -- stack<integer> st=new Stack();
+    
+    //Push the data into the stack
+    for(int i=0;i<n;i++){
+        st.push(arr[i]);
+    }
+    
+    //Pop out the top most data from thr stack and put into the array
+    for(int i=0;i<n;i++){
+        arr[i]=st.top();
+        st.pop();
+    }
+    cout<<"Reversed Array...";
+    
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+
+
+//Program 2
+//Reverse a string (leetcode 344)
+
+class Solution {                                     //USING DOUBLE FOR LOOP
+public:
+    void reverseString(vector<char>& s) {
+        stack<char> st;
+        for(int i=0;i<s.size();i++){
+            st.push(s[i]);
+        }
+        int i=0;
+        for(int i=0;i<s.size();i++){
+            s[i]=st.top();
+            st.pop();
+         }
+    }    
+};
+
+
+class Solution {                                   //USING WHILE LOOP AND (IS EMPTY FUNCTION)
+public:
+    void reverseString(vector<char>& s) {
+        stack<char> st;
+        for(int i=0;i<s.size();i++){
+            st.push(s[i]);
+        }
+
+        int i=0;
+        while(!st.empty()){
+            s[i++]=st.top();
+            st.pop();
+        }
+    }    
+};
